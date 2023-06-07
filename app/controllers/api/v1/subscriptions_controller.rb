@@ -5,6 +5,18 @@ class Api::V1::SubscriptionsController < ApplicationController
     end
   end
 
+  def update
+    begin
+      render json: SubscriptionSerializer.new(Subscription.update(params[:id], subscription_params))
+    end
+  end
+
+  def index
+    begin
+      render json: SubscriptionSerializer.new(Subscription.all)
+    end
+  end
+
   private
 
   def subscription_params
