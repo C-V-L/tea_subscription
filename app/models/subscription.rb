@@ -1,5 +1,5 @@
 class Subscription < ApplicationRecord
-  validates_presence_of :title, :price, :status, :frequency, :customer_id
+  validates_presence_of :price, :status, :frequency, :customer_id
 
   belongs_to :customer
   has_many :subscription_teas, dependent: :destroy
