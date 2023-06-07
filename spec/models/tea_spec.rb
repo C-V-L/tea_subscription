@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Tea, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:description)}
+  it { should validate_presence_of(:temp)}
+  it { should validate_presence_of(:brew_time)}
+  it { should have_many(:subscription_teas) }
+  it { should have_many(:subscriptions).through(:subscription_teas) }
+  it { should have_many(:customers).through(:subscriptions) }
 end
