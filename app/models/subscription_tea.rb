@@ -1,0 +1,2 @@
+class SubscriptionTea < ApplicationRecord
+end
