@@ -110,3 +110,21 @@ Payload must be passed as a raw JSON payload:
 {
     "status": "cancelled"
 }
+```
+
+Response:
+```bash
+{
+    "data": {
+        "id": "4",
+        "type": "subscription",
+        "attributes": {
+            "customer_id": 1,
+            "tea_id": 1,
+            "price": 21.5,
+            "status": "cancelled",
+            "frequency": "monthly"
+        }
+    }
+}
+```
