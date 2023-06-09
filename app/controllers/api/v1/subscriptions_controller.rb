@@ -1,8 +1,10 @@
 class Api::V1::SubscriptionsController < ApplicationController
   wrap_parameters :subscription, include: [:customer_id, :tea_id, :price, :status, :frequency]
+
   def create
+    customer = Customer.find(params[:customer_id])
     begin
-      render json: SubscriptionSerializer.new(Subscription.create!(subscription_params))
+      render json: SubscriptionSerializer.new(customer.subscriptions.create!(subscription_params))
     end
   end
 

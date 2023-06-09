@@ -32,11 +32,11 @@ describe "Subscriptions API" do
 
     describe "sad path" do
       it 'returns an error if customer_id is missing' do
-        post "/api/v1/customers/#{@customer.id}/subscriptions", params: {tea_id: @tea.id, price: 1.5, frequency: "weekly" }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+        post "/api/v1/customers/9999/subscriptions", params: {tea_id: @tea.id, price: 1.5, frequency: "weekly" }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
         
         error = JSON.parse(response.body, symbolize_names: true)
         expect(error[:errors][0][:status]).to eq(404)
-        expect(error[:errors][0][:title]).to eq("Validation failed: Customer can't be blank, Customer must exist")
+        expect(error[:errors][0][:title]).to eq("Couldn't find Customer with 'id'=9999")
       end
 
       it 'returns an error if tea_id is missing' do
