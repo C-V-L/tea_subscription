@@ -80,6 +80,23 @@ Payload must be passed as a raw JSON payload:
     "frequency": "weekly"
 }
 ```
+
+Response:
+```bash
+{
+    "data": {
+        "id": "4",
+        "type": "subscription",
+        "attributes": {
+            "customer_id": 1,
+            "tea_id": 1,
+            "price": 9.5,
+            "status": "active",
+            "frequency": "weekly"
+        }
+    }
+}
+```
 <br>
 2. Update a subscriptions status:
 <br>
