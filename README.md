@@ -65,7 +65,7 @@ All tests should be passing if the installation was successful.
 ### __Subscription__ __Endpoints__
 
 <br>
-### 1. Create a New Customer Subscription:
+1. Create a New Customer Subscription:
 <br>
 
 ```bash
@@ -79,9 +79,9 @@ Payload must be passed as a raw JSON payload:
     "price": 9.5,
     "frequency": "weekly"
 }
-
+```
 <br>
-### 2. Update a subscription's status:
+2. Update a subscriptions status:
 <br>
 
 ```bash
