@@ -12,11 +12,4 @@ class ApplicationController < ActionController::API
     render json: ErrorSerializer.new(error).serialized_json, status: 404
   end
 
-  def render_invaild_request(error)
-    render json: ErrorSerializer.new(error).serialized_json, status: 400
-  end
-
-  def render_nil_user(error)
-    render json: ErrorSerializer.new(error).serialized_json, status: 404
-  end
 end
