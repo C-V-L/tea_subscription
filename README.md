@@ -1,24 +1,95 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Built With:
 
-Things you may want to cover:
+* [![Ruby]][Ruby-url] **3.1.1**
+* [![Rails]][Rails-url] **7.0.4**
+* [![Postgresql]][Postgresql-url]
 
-* Ruby version
+### Installation
 
-* System dependencies
+1. Clone the repo:
+   ```bash
+   git clone git@github.com:C-V-L/tea_subscription.git
+   ```
 
-* Configuration
+2. Install gems:
+   ```bash
+   bundle install
+   ```
 
-* Database creation
+3. To establish the database, run:
+   ```bash
+   rails db:create
+   ```
 
-* Database initialization
+4. Since this is the back-end repository, a database migration is also necessary, run:
+   ```bash
+   rails db:migrate
+   ```
+5. Seed the database with a Customer and Tea, run:
+   ```bash
+   rails db:seed
+   ```
+<br>
 
-* How to run the test suite
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-* Services (job queues, cache servers, search engines, etc.)
+<br>
 
-* Deployment instructions
+### Testing with RSpec
 
-* ...
+Once `tea_subscription` is correctly installed, run tests locally to ensure the repository works as intended.
+
+<br>
+
+  To test the entire RSpec suite, run:
+   ```bash
+   bundle exec rspec
+   ```
+
+<br>
+
+All tests should be passing if the installation was successful. 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br>
+## Available Endpoints
+- This API can be called locally using a program like [Postman](https://www.postman.com).
+
+- *Note:* Necessary parameters marked with {}
+
+<br>
+
+### __Subscription__ __Endpoints__
+
+<br>
+### 1. Create a New Customer Subscription:
+<br>
+
+```bash
+POST '/api/v1/customer/:id/subscriptions'
+```
+
+Payload must be passed as a raw JSON payload:
+```bash
+{
+    "tea_id": 1,
+    "price": 9.5,
+    "frequency": "weekly"
+}
+
+<br>
+### 2. Update a subscription's status:
+<br>
+
+```bash
+PATCH '/api/v1/customer/:id/subscriptions/:id'
+```
+
+Payload must be passed as a raw JSON payload:
+```bash
+{
+    "status": "cancelled"
+}
