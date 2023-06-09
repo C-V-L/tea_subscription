@@ -128,3 +128,62 @@ Response:
     }
 }
 ```
+<br>
+3. Get all of a customer's Subscriptions:
+<br>
+
+```bash
+GET '/api/v1/customer/:id/subscriptions'
+```
+
+Response:
+```bash
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "subscription",
+            "attributes": {
+                "customer_id": 1,
+                "tea_id": 1,
+                "price": 19.5,
+                "status": "active",
+                "frequency": "monthly"
+            }
+        },
+        {
+            "id": "2",
+            "type": "subscription",
+            "attributes": {
+                "customer_id": 1,
+                "tea_id": 1,
+                "price": 1.5,
+                "status": "active",
+                "frequency": "weekly"
+            }
+        },
+        {
+            "id": "3",
+            "type": "subscription",
+            "attributes": {
+                "customer_id": 1,
+                "tea_id": 1,
+                "price": 9.5,
+                "status": "active",
+                "frequency": "weekly"
+            }
+        },
+        {
+            "id": "4",
+            "type": "subscription",
+            "attributes": {
+                "customer_id": 1,
+                "tea_id": 1,
+                "price": 21.5,
+                "status": "active",
+                "frequency": "monthly"
+            }
+        }
+    ]
+}
+```
